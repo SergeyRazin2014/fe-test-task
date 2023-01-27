@@ -1,10 +1,27 @@
 import React, { FC } from 'react';
+import styles from './square.module.css';
+import cn from 'classnames';
+import { X, O } from '../../../../../shared/constants/marks';
 
 type SquareProps = {
-  title: string;
+  isDisabled: boolean;
   value: number;
+  title: string;
+  onClick: () => void;
 };
 
 export const Square: FC<SquareProps> = (props) => {
-  return <div>SQUARE</div>;
+  const classSquare = cn(styles.square, {
+    [styles.disabled]: props.title === X || props.title === O,
+  });
+
+  return (
+    <button
+      disabled={props.isDisabled}
+      onClick={() => props.onClick()}
+      className={classSquare}
+    >
+      {props.title}
+    </button>
+  );
 };

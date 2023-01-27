@@ -1,13 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
 import './App.css';
-import { Game } from './features/tic-tac-toe/game/game.component';
+import { TicTacToe } from './features/tic-tac-toe/tic-tac-toe.component';
 
 function App() {
   return (
     <div className='App'>
-      <Game test='TEST' />
+      <TicTacToe />
     </div>
   );
 }
