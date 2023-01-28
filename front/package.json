@@ -32,7 +32,7 @@
     "eject": "react-scripts eject",
     "stylelint": "stylelint \"**/*.css\" --fix"
   },
-  "proxy": "http://localhost:5000",
+  "proxy": "http://localhost:3000",
   "eslintConfig": {
     "extends": [
       "react-app",

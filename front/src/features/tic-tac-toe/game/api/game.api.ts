@@ -17,7 +17,7 @@ export const resetGame = (): AxiosPromise<GameInfo> => {
   return promise;
 };
 
-export const nextGame = () => {
-  const promise = axios.get(gameUrls.nextGame);
+export const nextGame = (): AxiosPromise<GameInfo> => {
+  const promise = axios.get<GameInfo>(gameUrls.nextGame);
   return promise;
 };

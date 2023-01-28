@@ -41,7 +41,7 @@ export const Score = () => {
           return (
             <div key={index}>
               №: {index + 1}; ПОБЕДИТЕЛЬ: {item.winner}; ВРЕМЯ:{' '}
-              {format(new Date(item.ts), 'dd.MM.yyyy HH:mm:ss')}
+              {format(item.ts, 'dd.MM.yyyy HH:mm:ss')}
             </div>
           );
         })}
