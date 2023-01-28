@@ -12,6 +12,9 @@ type BoardProps = {
   isDisabled?: boolean;
   onSquareClick: (val: number) => void;
 };
+/**
+ * Компонент для отображения игровой доски
+ */
 export const Board: FC<BoardProps> = ({
   boardData,
   onSquareClick,

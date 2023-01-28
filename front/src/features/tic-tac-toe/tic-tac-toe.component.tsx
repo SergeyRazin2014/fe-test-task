@@ -7,6 +7,9 @@ import {
   GameLogItem,
 } from './context/tic-tac-toe.context';
 
+/**
+ * Главный компонент игры крестики нолики
+ * */
 export const TicTacToe = () => {
   const [gameLogItems, setGameLogItems] = useState<GameLogItem[]>([]);
 

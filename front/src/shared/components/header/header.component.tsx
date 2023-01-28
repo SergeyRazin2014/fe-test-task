@@ -2,6 +2,9 @@ import React, { FC } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import styles from './header.module.css';
 
+/**
+ * Компонент - шапка игры крестики нолики
+ * */
 export const Header: FC = () => {
   return (
     <>

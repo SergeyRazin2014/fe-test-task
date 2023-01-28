@@ -10,6 +10,9 @@ type SquareProps = {
   onClick: () => void;
 };
 
+/**
+ * Компонент - ячейка игровой доски
+ * */
 export const Square: FC<SquareProps> = (props) => {
   const classSquare = cn(styles.square, {
     [styles.disabled]: props.title === X || props.title === O,
