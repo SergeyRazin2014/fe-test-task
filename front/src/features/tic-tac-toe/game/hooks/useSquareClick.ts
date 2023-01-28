@@ -5,7 +5,6 @@ import { getAiPosition } from '../utils/getAiPosition';
 import { useAppDispatch, useAppSelector } from '../../../../app/hooks';
 import { TicTacToeContext } from '../../context/tic-tac-toe.context';
 import { gameInfoSelector } from '../slice/game.selectors';
-import { GameInfo } from '../types/game.types';
 
 export const useSquareClick = () => {
   const dispatch = useAppDispatch();
@@ -25,12 +24,14 @@ export const useSquareClick = () => {
 
       move({ index: val })
         .then((response) => {
-          context.addLogItem({
-            position: getAiPosition(gameInfo!, response.data),
-            mark: response.data.result.ai,
-            time: Date.now(),
-            actor: 'ai',
-          });
+          if (!response.data.result.end) {
+            context.addLogItem({
+              position: getAiPosition(gameInfo!, response.data),
+              mark: response.data.result.ai,
+              time: Date.now(),
+              actor: 'ai',
+            });
+          }
 
           dispatch(gameActions.fetchSuccess(response.data));
         })

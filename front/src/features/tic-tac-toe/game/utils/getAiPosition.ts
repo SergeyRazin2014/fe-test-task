@@ -15,5 +15,5 @@ export const getAiPosition = (
     }
   }
 
-  throw Error("ai didn't makes move");
+  return -1;
 };
