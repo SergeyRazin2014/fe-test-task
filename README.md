@@ -1,3 +1,13 @@
+----
+# ЗАПУСК ТЕСТОВОГО ЗАДАНИЯ
+
+В консоли перейти в корень проекта и вызвать команды:
+
+npm run start
+cd ./front
+npm run start
+
+
 Test assignment for the front-end developer position applicants
 ----
 This repository contains the back-end component for a game of **tic-tac-toe** against the AI. Your assignment is to develop the front-end.
