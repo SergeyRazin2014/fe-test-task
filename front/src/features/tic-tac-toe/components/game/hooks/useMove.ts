@@ -5,11 +5,12 @@ import { getAiPosition } from '../utils/getAiPosition';
 import { useAppDispatch, useAppSelector } from '../../../../../app/hooks';
 import { TicTacToeContext } from '../../../context/tic-tac-toe.context';
 import { gameInfoSelector } from '../slice/game.selectors';
+import { GameInfo } from '../types/game.types';
 
 export const useMove = () => {
   const dispatch = useAppDispatch();
   const context = useContext(TicTacToeContext);
-  const gameInfo = useAppSelector(gameInfoSelector);
+  const gameInfo = useAppSelector(gameInfoSelector) as GameInfo;
 
   return useCallback(
     (val: number) => {
@@ -17,17 +18,17 @@ export const useMove = () => {
         position: val,
         actor: 'player',
         time: Date.now(),
-        mark: gameInfo!.result.player,
+        mark: gameInfo.result.player,
       });
 
       dispatch(gameActions.fetchPending());
 
       move({ index: val })
         .then((response) => {
-          const aiPosition = getAiPosition(gameInfo!, response.data);
+          const aiPosition = getAiPosition(gameInfo, response.data);
           if (aiPosition >= 0) {
             context.addLogItem({
-              position: getAiPosition(gameInfo!, response.data),
+              position: getAiPosition(gameInfo, response.data),
               mark: response.data.result.ai,
               time: Date.now(),
               actor: 'ai',
