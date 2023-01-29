@@ -8,6 +8,7 @@ import { format } from 'date-fns';
 import { useResetGame } from './hooks/useResetGame';
 import { useNextGame } from './hooks/useNextGame';
 import { useSquareClick } from './hooks/useSquareClick';
+import { GameLog } from './components/game-log/game-log.component';
 
 export const Game: FC = () => {
   const context = useContext(TicTacToeContext);
@@ -35,16 +36,17 @@ export const Game: FC = () => {
         />
       )}
       <div>
-        {context?.items.map((item) => {
-          return (
-            <div key={item.position}>
-              <div>
-                {item.actor}; {format(item.time, 'HH:mm:ss')}; {item.mark}-
-                {item.position}
-              </div>
-            </div>
-          );
-        })}
+        <GameLog />
+        {/*{context.items.map((item) => {*/}
+        {/*  return (*/}
+        {/*    <div key={item.position}>*/}
+        {/*      <div>*/}
+        {/*        {item.actor}; {format(item.time, 'HH:mm:ss')}; {item.mark}-*/}
+        {/*        {item.position}*/}
+        {/*      </div>*/}
+        {/*    </div>*/}
+        {/*  );*/}
+        {/*})}*/}
       </div>
     </>
   );

@@ -6,8 +6,6 @@
 .nav_items {
 	display: flex;
 	justify-content: space-between;
-
 	width: 500px;
-
 	list-style-type: none;
 }
