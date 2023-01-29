@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import { Divider } from 'antd';
 import './header.css';
 
 /**
@@ -11,13 +12,18 @@ export const Header: FC = () => {
       <nav className='nav'>
         <ul className='nav-items'>
           <li>
-            <Link to={`/`}>GAME</Link>
+            <Link to={`/`} className='nav-item'>
+              GAME
+            </Link>
           </li>
           <li>
-            <Link to={`/score`}>SCORE</Link>
+            <Link to={`/score`} className='nav-item'>
+              SCORE
+            </Link>
           </li>
         </ul>
       </nav>
+      <Divider className='driver' />
       <Outlet />
     </>
   );

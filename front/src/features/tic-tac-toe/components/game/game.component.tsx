@@ -1,6 +1,6 @@
-import React, { FC, useContext, useEffect } from 'react';
+import React, { FC, useContext } from 'react';
 import { useAppSelector } from '../../../../app/hooks';
-import { gameInfoSelector, gameLoadSelector } from './slice/game.selectors';
+import { gameInfoSelector } from './slice/game.selectors';
 import { useCurrentGameInfo } from './hooks/useCurrentGameInfo';
 import { Board } from './components/board/board.component';
 import { useResetGame } from './hooks/useResetGame';
@@ -21,7 +21,6 @@ export const Game: FC = () => {
   const onSquareClick = useSquareClick();
 
   const gameInfo = useAppSelector(gameInfoSelector);
-  const loadingStatus = useAppSelector(gameLoadSelector);
 
   return (
     <>
@@ -47,7 +46,7 @@ export const Game: FC = () => {
           onSquareClick={onSquareClick}
         />
       )}
-      {!!context.items.length && <GameLog />}
+      {!!context.logItems.length && <GameLog />}
     </>
   );
 };

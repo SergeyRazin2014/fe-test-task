@@ -8,7 +8,7 @@ export const useResetGame = () => {
   const dispatch = useAppDispatch();
   const context = useContext(TicTacToeContext);
 
-  const foo = useCallback(() => {
+  return useCallback(() => {
     dispatch(gameActions.fetchPending());
 
     resetGame()
@@ -20,6 +20,4 @@ export const useResetGame = () => {
         dispatch(gameActions.fetchFailure(err));
       });
   }, []);
-
-  return foo;
 };

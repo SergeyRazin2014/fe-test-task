@@ -9,13 +9,13 @@ export type GameLogItem = {
 };
 
 export type GameLogContext = {
-  items: GameLogItem[];
+  logItems: GameLogItem[];
   addLogItem: (item: GameLogItem) => void;
   resetLog: () => void;
 };
 
 export const TicTacToeContext = createContext<GameLogContext>({
-  items: [],
+  logItems: [],
   addLogItem: () => undefined,
   resetLog: () => undefined,
 });

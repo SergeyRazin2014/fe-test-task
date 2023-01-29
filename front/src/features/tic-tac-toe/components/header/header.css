@@ -1,6 +1,7 @@
 .nav {
 	display: flex;
 	justify-content: center;
+	padding: 10px 0;
 }
 
 .nav-items {
@@ -8,4 +9,14 @@
 	justify-content: space-between;
 	width: 500px;
 	list-style-type: none;
+}
+
+.nav-item{
+	color: cornflowerblue;
+	text-decoration: none;
+}
+
+.driver{
+	padding: 0;
+	margin: 0;
 }

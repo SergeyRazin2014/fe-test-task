@@ -2,7 +2,7 @@ import { createBrowserRouter, Link, Outlet } from 'react-router-dom';
 import { Game } from '../components/game/game.component';
 import { Score } from '../components/score/score.component';
 import React from 'react';
-import { Header } from '../../../shared/components/header/header.component';
+import { Header } from '../components/header/header.component';
 
 export const router = createBrowserRouter([
   {

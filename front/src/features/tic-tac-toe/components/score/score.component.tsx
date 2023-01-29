@@ -4,6 +4,26 @@ import { scoreInfoSelector, scoreLoadSelector } from './slice/score.selectors';
 import { LOADING_STATUS } from '../../../../shared/constants/loading-status';
 import { format } from 'date-fns';
 import { useScore } from './hooks/useScore';
+import { Table } from 'antd';
+import { Typography, Spin } from 'antd';
+
+const columns = [
+  {
+    title: '',
+    dataIndex: 'number',
+    key: 'number',
+  },
+  {
+    title: 'Winner',
+    dataIndex: 'winner',
+    key: 'winner',
+  },
+  {
+    title: 'Time',
+    dataIndex: 'time',
+    key: 'time',
+  },
+];
 
 /**
  * Компонент для отображения результатов всех сыгранных игр
@@ -14,24 +34,26 @@ export const Score = () => {
 
   useScore();
 
-  //*--* todo: ПОДУМАТЬ КАК СДЕЛАТЬ ЛУЧШЕ ЛОАДЕР
   if (loadingStatus !== LOADING_STATUS.LOADED) {
-    return <p>Loading...</p>;
+    return <Spin />;
   }
+
+  const dataSource = scoreInfo?.result.list.map((item, index) => {
+    return {
+      ...item,
+      number: index + 1,
+      winner: item.winner ? item.winner : 'draw',
+      time: format(item.ts, 'dd.MM.yyyy HH:mm:ss'),
+      key: item.ts,
+    };
+  });
 
   return (
     <>
-      <div>{`КОМПЬЮТЕР ВЫИГРАЛ РАЗ: ${scoreInfo?.result?.ai}`}</div>
-      <div>{`ИГРОК ВЫИГРАЛ РАЗ: ${scoreInfo?.result?.player}`}</div>
+      <Typography>{`AI wins: ${scoreInfo?.result?.ai}`}</Typography>
+      <Typography>{`Player wins: ${scoreInfo?.result?.player}`}</Typography>
       <div>
-        {scoreInfo?.result.list.map((item, index) => {
-          return (
-            <div key={index}>
-              №: {index + 1}; ПОБЕДИТЕЛЬ: {item.winner}; ВРЕМЯ:{' '}
-              {format(item.ts, 'dd.MM.yyyy HH:mm:ss')}
-            </div>
-          );
-        })}
+        <Table dataSource={dataSource} columns={columns} pagination={false} />
       </div>
     </>
   );

@@ -24,7 +24,7 @@ export const TicTacToe = () => {
     <div className={'tic-tac-toe'}>
       <div className={'tic-tac-toe__inner'}>
         <TicTacToeContext.Provider
-          value={{ items: gameLogItems, addLogItem, resetLog }}
+          value={{ logItems: gameLogItems, addLogItem, resetLog }}
         >
           <RouterProvider router={router} />
         </TicTacToeContext.Provider>

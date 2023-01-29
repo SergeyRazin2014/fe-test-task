@@ -24,7 +24,7 @@ const columns = [
 export const GameLog: FC = () => {
   const context = useContext(TicTacToeContext);
 
-  const dataSource = context.items.map((item) => {
+  const dataSource = context.logItems.map((item) => {
     return {
       ...item,
       time: format(item.time, 'HH:mm:ss'),
