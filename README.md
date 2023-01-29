@@ -3,8 +3,8 @@
 
 В консоли перейти в корень проекта и вызвать команды:
 
-npm run start
-cd ./front
+npm run start<br>
+cd ./front<br>
 npm run start
 
 
