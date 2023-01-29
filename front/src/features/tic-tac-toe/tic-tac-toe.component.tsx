@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
 import { RouterProvider } from 'react-router-dom';
 import { router } from './route/route';
-import {
-  GameLogContext,
-  TicTacToeContext,
-  GameLogItem,
-} from './context/tic-tac-toe.context';
+import { TicTacToeContext, GameLogItem } from './context/tic-tac-toe.context';
 
 /**
  * Главный компонент игры крестики нолики

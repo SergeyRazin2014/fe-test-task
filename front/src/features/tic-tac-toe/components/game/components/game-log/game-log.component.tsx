@@ -1,6 +1,6 @@
 import React, { FC, useContext } from 'react';
 import { format } from 'date-fns';
-import { TicTacToeContext } from '../../../context/tic-tac-toe.context';
+import { TicTacToeContext } from '../../../../context/tic-tac-toe.context';
 
 export const GameLog: FC = () => {
   const context = useContext(TicTacToeContext);

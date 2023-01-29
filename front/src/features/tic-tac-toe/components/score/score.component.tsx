@@ -1,7 +1,7 @@
 import React from 'react';
-import { useAppSelector } from '../../../app/hooks';
+import { useAppSelector } from '../../../../app/hooks';
 import { scoreInfoSelector, scoreLoadSelector } from './slice/score.selectors';
-import { LOADING_STATUS } from '../../../shared/constants/loading-status';
+import { LOADING_STATUS } from '../../../../shared/constants/loading-status';
 import { format } from 'date-fns';
 import { useScore } from './hooks/useScore';
 

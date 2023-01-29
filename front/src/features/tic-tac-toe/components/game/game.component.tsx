@@ -1,18 +1,14 @@
 import React, { FC, useContext, useEffect } from 'react';
-import { useAppSelector } from '../../../app/hooks';
+import { useAppSelector } from '../../../../app/hooks';
 import { gameInfoSelector, gameLoadSelector } from './slice/game.selectors';
 import { useCurrentGameInfo } from './hooks/useCurrentGameInfo';
 import { Board } from './components/board/board.component';
-import { TicTacToeContext } from '../context/tic-tac-toe.context';
-import { format } from 'date-fns';
 import { useResetGame } from './hooks/useResetGame';
 import { useNextGame } from './hooks/useNextGame';
 import { useSquareClick } from './hooks/useSquareClick';
 import { GameLog } from './components/game-log/game-log.component';
 
 export const Game: FC = () => {
-  const context = useContext(TicTacToeContext);
-
   useCurrentGameInfo();
 
   const resetGameClick = useResetGame();
@@ -37,16 +33,6 @@ export const Game: FC = () => {
       )}
       <div>
         <GameLog />
-        {/*{context.items.map((item) => {*/}
-        {/*  return (*/}
-        {/*    <div key={item.position}>*/}
-        {/*      <div>*/}
-        {/*        {item.actor}; {format(item.time, 'HH:mm:ss')}; {item.mark}-*/}
-        {/*        {item.position}*/}
-        {/*      </div>*/}
-        {/*    </div>*/}
-        {/*  );*/}
-        {/*})}*/}
       </div>
     </>
   );

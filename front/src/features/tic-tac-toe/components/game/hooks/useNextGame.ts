@@ -1,9 +1,9 @@
 import { nextGame } from '../api/game.api';
 import { gameActions } from '../slice/game.slice';
-import { O, X } from '../../../../shared/constants/marks';
+import { O, X } from '../../../../../shared/constants/marks';
 import { useCallback, useContext } from 'react';
-import { useAppDispatch } from '../../../../app/hooks';
-import { TicTacToeContext } from '../../context/tic-tac-toe.context';
+import { useAppDispatch } from '../../../../../app/hooks';
+import { TicTacToeContext } from '../../../context/tic-tac-toe.context';
 
 export const useNextGame = () => {
   const dispatch = useAppDispatch();

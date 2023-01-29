@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { scoreActions } from '../slice/score.slice';
 import { getScore } from '../api/score.api';
 import { gameActions } from '../../game/slice/game.slice';
-import { useAppDispatch } from '../../../../app/hooks';
+import { useAppDispatch } from '../../../../../app/hooks';
 
 export const useScore = () => {
   const dispatch = useAppDispatch();

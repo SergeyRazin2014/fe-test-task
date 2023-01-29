@@ -1,7 +1,7 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import counterReducer from '../features/counter/counterSlice';
-import { gameReducer } from '../features/tic-tac-toe/game/slice/game.slice';
-import { scoreReducer } from '../features/tic-tac-toe/score/slice/score.slice';
+import { gameReducer } from '../features/tic-tac-toe/components/game/slice/game.slice';
+import { scoreReducer } from '../features/tic-tac-toe/components/score/slice/score.slice';
 
 export const store = configureStore({
   reducer: {

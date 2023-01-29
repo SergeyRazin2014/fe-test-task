@@ -1,4 +1,4 @@
-import { useAppDispatch } from '../../../../app/hooks';
+import { useAppDispatch } from '../../../../../app/hooks';
 import { useEffect, useState } from 'react';
 import { gameActions } from '../slice/game.slice';
 import { getCurrentGameInfo } from '../api/game.api';

@@ -1,5 +1,5 @@
 import React, { createContext } from 'react';
-import { XO } from '../game/types/game.types';
+import { XO } from '../components/game/types/game.types';
 
 export type GameLogItem = {
   actor: 'player' | 'ai';

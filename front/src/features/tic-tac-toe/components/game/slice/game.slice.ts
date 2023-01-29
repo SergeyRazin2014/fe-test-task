@@ -1,29 +1,29 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { LOADING_STATUS } from '../../../../shared/constants/loading-status';
-import { ScoreInfo } from '../types/score.types';
+import { LOADING_STATUS } from '../../../../../shared/constants/loading-status';
+import { GameInfo } from '../types/game.types';
 
-type ScoreInitial = {
+type GameState = {
   loadingStatus: LOADING_STATUS;
-  scoreInfo: ScoreInfo | null;
+  gameInfo: GameInfo | null;
   error: string | null;
 };
 
-const scoreInitial: ScoreInitial = {
+const gameInitial: GameState = {
   loadingStatus: LOADING_STATUS.NOT_LOADED,
-  scoreInfo: null,
+  gameInfo: null,
   error: null,
 };
 
-const scoreSlice = createSlice({
-  name: 'score',
-  initialState: scoreInitial,
+const gameSlice = createSlice({
+  name: 'game',
+  initialState: gameInitial,
   reducers: {
     fetchPending: (state): void => {
       state.loadingStatus = LOADING_STATUS.LOADING;
     },
-    fetchSuccess: (state, action: PayloadAction<ScoreInfo>): void => {
+    fetchSuccess: (state, action: PayloadAction<GameInfo>): void => {
       state.loadingStatus = LOADING_STATUS.LOADED;
-      state.scoreInfo = action.payload;
+      state.gameInfo = action.payload;
     },
     fetchFailure: (state, action: PayloadAction<string>): void => {
       state.loadingStatus = LOADING_STATUS.ERROR;
@@ -32,5 +32,5 @@ const scoreSlice = createSlice({
   },
 });
 
-export const scoreActions = scoreSlice.actions;
-export const scoreReducer = scoreSlice.reducer;
+export const gameActions = gameSlice.actions;
+export const gameReducer = gameSlice.reducer;

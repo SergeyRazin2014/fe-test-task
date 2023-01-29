@@ -2,8 +2,8 @@ import { useCallback, useContext } from 'react';
 import { gameActions } from '../slice/game.slice';
 import { move } from '../api/game.api';
 import { getAiPosition } from '../utils/getAiPosition';
-import { useAppDispatch, useAppSelector } from '../../../../app/hooks';
-import { TicTacToeContext } from '../../context/tic-tac-toe.context';
+import { useAppDispatch, useAppSelector } from '../../../../../app/hooks';
+import { TicTacToeContext } from '../../../context/tic-tac-toe.context';
 import { gameInfoSelector } from '../slice/game.selectors';
 
 export const useSquareClick = () => {

@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import styles from './square.module.css';
 import cn from 'classnames';
-import { X, O } from '../../../../../shared/constants/marks';
+import { X, O } from '../../../../../../shared/constants/marks';
 
 type SquareProps = {
   isDisabled: boolean;

@@ -2,10 +2,10 @@ import React, { FC, SyntheticEvent, useContext } from 'react';
 import { Square } from '../square/square.component';
 import styles from './board.module.css';
 import { move } from '../../api/game.api';
-import { X, O } from '../../../../../shared/constants/marks';
+import { X, O } from '../../../../../../shared/constants/marks';
 import { gameActions } from '../../slice/game.slice';
-import { useAppDispatch } from '../../../../../app/hooks';
-import { TicTacToeContext } from '../../../context/tic-tac-toe.context';
+import { useAppDispatch } from '../../../../../../app/hooks';
+import { TicTacToeContext } from '../../../../context/tic-tac-toe.context';
 
 type BoardProps = {
   boardData: Array<number | string>;
