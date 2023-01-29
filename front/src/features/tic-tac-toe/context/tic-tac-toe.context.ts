@@ -8,13 +8,13 @@ export type GameLogItem = {
   position: number;
 };
 
-export type GameLogContext = {
+export type TicTacToeContextType = {
   logItems: GameLogItem[];
   addLogItem: (item: GameLogItem) => void;
   resetLog: () => void;
 };
 
-export const TicTacToeContext = createContext<GameLogContext>({
+export const TicTacToeContext = createContext<TicTacToeContextType>({
   logItems: [],
   addLogItem: () => undefined,
   resetLog: () => undefined,
