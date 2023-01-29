@@ -24,7 +24,8 @@ export const useSquareClick = () => {
 
       move({ index: val })
         .then((response) => {
-          if (!response.data.result.end) {
+          const aiPosition = getAiPosition(gameInfo!, response.data);
+          if (aiPosition >= 0) {
             context.addLogItem({
               position: getAiPosition(gameInfo!, response.data),
               mark: response.data.result.ai,
