@@ -1,4 +1,4 @@
-import { createBrowserRouter, Link, Outlet } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
 import { Game } from '../components/game/game.component';
 import { Score } from '../components/score/score.component';
 import React from 'react';

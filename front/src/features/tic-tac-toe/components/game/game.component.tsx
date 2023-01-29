@@ -5,7 +5,7 @@ import { useCurrentGameInfo } from './hooks/useCurrentGameInfo';
 import { Board } from './components/board/board.component';
 import { useResetGame } from './hooks/useResetGame';
 import { useNextGame } from './hooks/useNextGame';
-import { useSquareClick } from './hooks/useSquareClick';
+import { useMove } from './hooks/useMove';
 import { GameLog } from './components/game-log/game-log.component';
 import { Space, Typography, Button } from 'antd';
 import { TicTacToeContext } from '../../context/tic-tac-toe.context';
@@ -18,7 +18,7 @@ export const Game: FC = () => {
 
   const resetGameClick = useResetGame();
   const nextGameClick = useNextGame();
-  const onSquareClick = useSquareClick();
+  const onSquareClick = useMove();
 
   const gameInfo = useAppSelector(gameInfoSelector);
 

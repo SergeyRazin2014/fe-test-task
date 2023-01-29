@@ -9,7 +9,7 @@ export const useNextGame = () => {
   const dispatch = useAppDispatch();
   const context = useContext(TicTacToeContext);
 
-  const foo = useCallback(() => {
+  return useCallback(() => {
     nextGame()
       .then((response) => {
         dispatch(gameActions.fetchSuccess(response.data));
@@ -32,5 +32,4 @@ export const useNextGame = () => {
         dispatch(gameActions.fetchFailure(err));
       });
   }, []);
-  return foo;
 };

@@ -1,4 +1,4 @@
-import React, { createContext } from 'react';
+import { createContext } from 'react';
 import { XO } from '../components/game/types/game.types';
 
 export type GameLogItem = {

@@ -6,12 +6,12 @@ import { useAppDispatch, useAppSelector } from '../../../../../app/hooks';
 import { TicTacToeContext } from '../../../context/tic-tac-toe.context';
 import { gameInfoSelector } from '../slice/game.selectors';
 
-export const useSquareClick = () => {
+export const useMove = () => {
   const dispatch = useAppDispatch();
   const context = useContext(TicTacToeContext);
   const gameInfo = useAppSelector(gameInfoSelector);
 
-  const foo = useCallback(
+  return useCallback(
     (val: number) => {
       context.addLogItem({
         position: val,
@@ -42,5 +42,4 @@ export const useSquareClick = () => {
     },
     [gameInfo]
   );
-  return foo;
 };
