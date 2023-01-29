@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import styles from './square.module.css';
+import './square.css';
 import cn from 'classnames';
 import { X, O } from '../../../../constants/marks';
 
@@ -14,8 +14,8 @@ type SquareProps = {
  * Компонент - ячейка игровой доски
  * */
 export const Square: FC<SquareProps> = (props) => {
-  const classSquare = cn(styles.square, {
-    [styles.disabled]: props.title === X || props.title === O,
+  const classSquare = cn('square', {
+    ['disabled']: props.title === X || props.title === O,
   });
 
   return (

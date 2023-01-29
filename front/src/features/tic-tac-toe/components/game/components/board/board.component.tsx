@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Square } from '../square/square.component';
-import styles from './board.module.css';
 import { X, O } from '../../../../constants/marks';
+import './board.css';
 
 type BoardProps = {
   boardData: Array<number | string>;
@@ -17,7 +17,7 @@ export const Board: FC<BoardProps> = ({
   isDisabled = false,
 }) => {
   return (
-    <div className={styles.board}>
+    <div className='board'>
       {boardData.flat(1).map((val, index) => {
         return (
           <Square

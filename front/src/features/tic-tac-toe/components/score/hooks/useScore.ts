@@ -10,7 +10,6 @@ export const useScore = () => {
   useEffect(() => {
     dispatch(scoreActions.fetchPending());
 
-    //*--* todo: вынести в хук
     getScore()
       .then((response) => {
         dispatch(scoreActions.fetchSuccess(response.data));

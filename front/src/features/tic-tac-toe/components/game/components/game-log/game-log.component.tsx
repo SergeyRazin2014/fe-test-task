@@ -21,6 +21,9 @@ const columns = [
   },
 ];
 
+/**
+ * Компонент - лог текущей партии
+ * */
 export const GameLog: FC = () => {
   const context = useContext(TicTacToeContext);
 

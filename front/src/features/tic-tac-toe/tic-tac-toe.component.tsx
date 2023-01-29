@@ -21,8 +21,8 @@ export const TicTacToe = () => {
   };
 
   return (
-    <div className={'tic-tac-toe'}>
-      <div className={'tic-tac-toe__inner'}>
+    <div className='tic-tac-toe'>
+      <div className='tic-tac-toe__inner'>
         <TicTacToeContext.Provider
           value={{ logItems: gameLogItems, addLogItem, resetLog }}
         >
