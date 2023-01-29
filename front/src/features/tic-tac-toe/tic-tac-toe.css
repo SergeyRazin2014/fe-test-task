@@ -1,0 +1,19 @@
+.tic-tac-toe {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.tic-tac-toe__inner {
+	width: 400px;
+}
+
+.tic-tac-toe__buttons {
+	display: flex;
+	justify-content: center;
+	padding: 10px 0;
+}
+
+.tic-tac-toe__players {
+	padding: 10px 0;
+}

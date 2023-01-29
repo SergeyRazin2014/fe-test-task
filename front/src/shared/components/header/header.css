@@ -3,7 +3,7 @@
 	justify-content: center;
 }
 
-.nav_items {
+.nav-items {
 	display: flex;
 	justify-content: space-between;
 	width: 500px;

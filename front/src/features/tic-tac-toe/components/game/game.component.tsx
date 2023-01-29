@@ -7,9 +7,14 @@ import { useResetGame } from './hooks/useResetGame';
 import { useNextGame } from './hooks/useNextGame';
 import { useSquareClick } from './hooks/useSquareClick';
 import { GameLog } from './components/game-log/game-log.component';
+import { Space, Typography, Button } from 'antd';
+import { TicTacToeContext } from '../../context/tic-tac-toe.context';
+
+const { Text } = Typography;
 
 export const Game: FC = () => {
   useCurrentGameInfo();
+  const context = useContext(TicTacToeContext);
 
   const resetGameClick = useResetGame();
   const nextGameClick = useNextGame();
@@ -20,10 +25,21 @@ export const Game: FC = () => {
 
   return (
     <>
-      <div>Игрок играет за: {gameInfo?.result?.player}</div>
-      <div>Компьютер играет за: {gameInfo?.result?.ai}</div>
-      <button onClick={resetGameClick}>RESET CURRENT</button>
-      <button onClick={nextGameClick}>NEXT GAME</button>
+      <div className='tic-tac-toe__players'>
+        <div>
+          <Text>Player: {gameInfo?.result?.player}</Text>
+        </div>
+        <div>
+          <Text>AI: {gameInfo?.result?.ai}</Text>
+        </div>
+      </div>
+
+      <div className='tic-tac-toe__buttons'>
+        <Space>
+          <Button onClick={resetGameClick}>reset game</Button>
+          <Button onClick={nextGameClick}>next game</Button>
+        </Space>
+      </div>
       {gameInfo && (
         <Board
           boardData={gameInfo.result.board.flat(1)}
@@ -31,9 +47,7 @@ export const Game: FC = () => {
           onSquareClick={onSquareClick}
         />
       )}
-      <div>
-        <GameLog />
-      </div>
+      {!!context.items.length && <GameLog />}
     </>
   );
 };

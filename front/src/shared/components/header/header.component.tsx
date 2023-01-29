@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Link, Outlet } from 'react-router-dom';
-import styles from './header.module.css';
+import './header.css';
 
 /**
  * Компонент - шапка игры крестики нолики
@@ -8,8 +8,8 @@ import styles from './header.module.css';
 export const Header: FC = () => {
   return (
     <>
-      <nav className={styles.nav}>
-        <ul className={styles.nav_items}>
+      <nav className='nav'>
+        <ul className='nav-items'>
           <li>
             <Link to={`/`}>GAME</Link>
           </li>

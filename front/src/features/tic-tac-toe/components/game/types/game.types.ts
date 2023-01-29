@@ -1,4 +1,4 @@
-import { X, O } from '../../../../../shared/constants/marks';
+import { X, O } from '../../../constants/marks';
 
 export type XO = typeof X | typeof O;
 
